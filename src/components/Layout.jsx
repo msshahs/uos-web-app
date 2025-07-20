@@ -12,6 +12,8 @@ export default function Layout({ children, currentPageName }) {
     { name: "Home", path: createPageUrl("") },
     { name: "About", path: createPageUrl("About") },
     { name: "Services", path: createPageUrl("Services") },
+    { name: "Clients", path: createPageUrl("Clients") },
+    { name: "Gallery", path: createPageUrl("Gallery") },
     { name: "Contact", path: createPageUrl("Contact") },
   ];
 
@@ -67,13 +69,18 @@ export default function Layout({ children, currentPageName }) {
               className="flex items-center space-x-3"
             >
               <div className="relative">
-                <Anchor className="h-8 w-8 text-blue-600 wave-animation" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                <img
+                  src="/images/logo_.png"
+                  style={{ width: "160px" }}
+                  className="transparent"
+                ></img>
+                {/* <Anchor className="h-8 w-8 text-blue-600 wave-animation" /> */}
+                {/* <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div> */}
               </div>
-              <div>
+              {/* <div>
                 <h1 className="text-xl font-bold gradient-text">UOS NOLA</h1>
                 <p className="text-xs text-gray-600">United Ocean Shipping</p>
-              </div>
+              </div> */}
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -128,7 +135,7 @@ export default function Layout({ children, currentPageName }) {
           >
             <div className="flex justify-between items-center h-20 px-4 sm:px-6 border-b">
               <Link
-                to={createPageUrl("Home")}
+                to={createPageUrl("")}
                 className="flex items-center space-x-3"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -178,7 +185,11 @@ export default function Layout({ children, currentPageName }) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <Anchor className="h-8 w-8 text-blue-400 wave-animation" />
+                <img
+                  src="/images/logo_.png"
+                  style={{ width: "140px" }}
+                  className="transparent"
+                ></img>
                 <div>
                   <h3 className="text-xl font-bold">
                     United Ocean Shipping NOLA, Inc.

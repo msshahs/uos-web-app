@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
+import VesselSlider from "../components/VesselSlider";
 
 export default function Services() {
   const services = [
@@ -156,8 +157,7 @@ export default function Services() {
       description:
         "Systematic audits against international standards like ISM, ISPS, ISO 9001/14001, and the MLC Code.",
       icon: BadgeCheck,
-      image:
-        "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/iso.png",
       features: [
         "Management system review",
         "ISO certification support",
@@ -199,7 +199,7 @@ export default function Services() {
       description:
         "Targeted training programs to enhance crew safety awareness, improve operational standards, and reduce cargo and pollution-related claims.",
       icon: Users,
-      image: "/images/crew_training.png",
+      image: "/images/crew_training.jpg",
       features: [
         "Safety culture workshops",
         "Cargo handling best practices",
@@ -285,10 +285,10 @@ export default function Services() {
         >
           <div>
             <Award className="w-16 h-16 mx-auto mb-6 text-blue-300" />
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-7xl font-bold mb-6">
               Our <span className="text-blue-300">Services</span>
             </h1>
-            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+            <p className="text-2xl text-blue-200 max-w-4xl mx-auto">
               Comprehensive maritime solutions designed to meet the evolving
               needs of the global shipping industry
             </p>
@@ -300,10 +300,10 @@ export default function Services() {
       <section className="py-20 bg-gradient-to-r from-blue-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 ">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
               Our Flagship Service
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
               Leading the industry with specialized VDR data analysis expertise
             </p>
           </div>
@@ -318,17 +318,17 @@ export default function Services() {
                 <div className="p-8">
                   <div className="flex items-center mb-4">
                     <Shield className="w-8 h-8 text-blue-600 mr-3" />
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-md font-medium">
                       Specialty Service
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
                     {featuredService.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-md sm:text-lg text-gray-600 mb-6 leading-relaxed">
                     {featuredService.description}
                   </p>
-                  <div className="space-y-2 mb-6">
+                  <div className="text-md sm:text-lg space-y-2 mb-6">
                     {featuredService.features.map((feature, index) => (
                       <div key={index} className="flex items-center">
                         <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
@@ -338,7 +338,7 @@ export default function Services() {
                   </div>
                   <Link to={createPageUrl("Contact")}>
                     <Button className="bg-blue-600 hover:bg-blue-700">
-                      Request Quote
+                      Contact Us
                     </Button>
                   </Link>
                 </div>
@@ -360,10 +360,10 @@ export default function Services() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 ">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
               Complete Service Portfolio
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
               Professional maritime services tailored to your specific
               operational requirements
             </p>
@@ -397,14 +397,14 @@ export default function Services() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      <p className="text-gray-600 mb-4 text-md leading-relaxed">
                         {service.description}
                       </p>
                       <div className="space-y-2">
                         {service.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center">
                             <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                            <span className="text-gray-600 text-sm">
+                            <span className="text-gray-600 text-md">
                               {feature}
                             </span>
                           </div>
@@ -420,7 +420,7 @@ export default function Services() {
       </section>
 
       {/* Vessel Types */}
-      <section className="py-20 bg-gradient-to-r from-slate-900 to-blue-900 text-white">
+      {/* <section className="py-20 bg-gradient-to-r from-slate-900 to-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 ">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -455,29 +455,30 @@ export default function Services() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
+      <VesselSlider />
 
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
               Connect with our maritime experts to discuss your specific
               requirements
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to={createPageUrl("Contact")}>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full">
-                  Get a Quote
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-xl rounded-full">
+                  Contact Us
                 </Button>
               </Link>
               <Link to={createPageUrl("About")}>
                 <Button
                   variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg rounded-full"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-xl rounded-full"
                 >
                   Learn More
                 </Button>

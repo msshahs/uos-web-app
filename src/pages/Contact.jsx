@@ -12,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import PortMap from "../components/PortMap";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -168,21 +169,21 @@ export default function Contact() {
       `}</style>
 
       {/* Hero Section */}
-      <section className="compass-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="compass-bg min-h-[50vh] flex items-center justify-center relative overflow-hidden">
         <div className="absolute top-20 right-20 opacity-10">
           <Compass className="w-64 h-64 text-white compass-animation" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white z-10">
           <div className="scroll-animate">
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-7xl font-bold mb-6">
               Contact <span className="text-blue-300">UOS NOLA</span>
             </h1>
-            <p className="text-xl text-blue-200 max-w-3xl mx-auto mb-8">
+            <p className="text-2xl text-blue-200 max-w-4xl mx-auto mb-8">
               Ready to navigate new possibilities? Connect with our maritime
               experts worldwide
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-lg">
               <div className="flex items-center gap-2 text-blue-200">
                 <Phone className="w-5 h-5" />
                 <span>24/7 Support Available</span>
@@ -268,7 +269,10 @@ export default function Contact() {
                         }
                       >
                         <SelectTrigger>
-                          <SelectValue placeholder="Select a service" />
+                          <SelectValue
+                            placeholder="Select a service"
+                            value={formData.service}
+                          />
                         </SelectTrigger>
                         <SelectContent>
                           {services.map((service) => (
@@ -333,7 +337,7 @@ export default function Contact() {
                       <p className="font-medium text-gray-900">
                         Emergency Line
                       </p>
-                      <p className="text-gray-600">+1 (800) UOS-NOLA</p>
+                      <p className="text-gray-600">+1 (504) 617-0298</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -353,13 +357,13 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">Headquarters</p>
-                      <p className="text-gray-600">New Orleans, Louisiana</p>
+                      <p className="text-gray-600">Houston, Texas</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="shadow-xl">
+              {/* <Card className="shadow-xl">
                 <CardHeader>
                   <CardTitle className="text-xl font-bold text-gray-900">
                     Response Times
@@ -391,14 +395,14 @@ export default function Contact() {
                     </span>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Global Offices */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-cyan-50">
+      {/* <section className="py-20 bg-gradient-to-r from-blue-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-animate">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -442,6 +446,19 @@ export default function Contact() {
               </Card>
             ))}
           </div>
+        </div>
+      </section> */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 scroll-animate">
+            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
+              Our Office Locations
+            </h2>
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
+              View our worldwide presence on the map
+            </p>
+          </div>
+          <PortMap />
         </div>
       </section>
     </div>
