@@ -54,7 +54,7 @@ export default function Home() {
 
   const stats = [
     { number: "50+", label: "Years Experience" },
-    { number: "1000+", label: "Projects Completed" },
+    { number: "10000+", label: "Projects Completed" },
     { number: "4", label: "Global Offices" },
     { number: "24/7", label: "Support Available" },
   ];
@@ -80,7 +80,7 @@ export default function Home() {
           className="relative z-20 text-center px-4"
         >
           <h1 className="text-4xl sm:text-7xl font-bold mb-4">
-            United Ocean Shipping
+            United Ocean Shipping NOLA, Inc.
           </h1>
           <p className="text-xl sm:text-3xl mb-4">Open to New Possibilities</p>
 

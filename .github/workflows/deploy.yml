@@ -1,0 +1,32 @@
+name: Deploy with OIDC to S3
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write # Required for OIDC
+  contents: read # To clone repo
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::692744833598:role/GitHubOIDCDeployRole
+          aws-region: us-east-2 # or your region
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Vite app
+        run: npm run build
+
+      - name: Sync to S3
+        run: aws s3 sync dist/ s3://uos-nola --delete

@@ -60,14 +60,14 @@ export default function Clients() {
                 key={index}
                 className="p-6 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="w-28 h-28 mb-4 bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
+                <div className="w-42 h-42 mb-4 bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
                   <img
                     src={client.logo}
                     alt={client.name}
                     className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+                <h3 className="text-lg md:text-2xl font-semibold text-gray-800">
                   {client.name}
                 </h3>
               </Card>

@@ -13,8 +13,8 @@ export default function Layout({ children, currentPageName }) {
     { name: "About", path: createPageUrl("About") },
     { name: "Services", path: createPageUrl("Services") },
     { name: "Clients", path: createPageUrl("Clients") },
-    { name: "Gallery", path: createPageUrl("Gallery") },
-    { name: "Contact", path: createPageUrl("Contact") },
+    // { name: "Gallery", path: createPageUrl("Gallery") },
+    { name: "Contact Us", path: createPageUrl("Contact") },
   ];
 
   return (
@@ -226,19 +226,15 @@ export default function Layout({ children, currentPageName }) {
               </h4>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-center space-x-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>Houston, Texas</span>
+                  <span className="text-lg">🇺🇸</span>
+                  <span>North America</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>Portland, Oregon</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <MapPin className="h-4 w-4" />
+                  <span className="text-lg">🇮🇳</span>
                   <span>India</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <MapPin className="h-4 w-4" />
+                  <span className="text-lg">🇦🇪</span>
                   <span>Abu Dhabi, UAE</span>
                 </li>
               </ul>

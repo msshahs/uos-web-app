@@ -107,10 +107,10 @@ export default function About() {
                   standards.
                 </p>
                 <p>
-                  From our strategic locations in Houston, Portland, India, and
-                  Abu Dhabi, we deliver world-class maritime services that
-                  encompass vessel management, safety advisory, technical
-                  surveys, and crew training.
+                  From our strategic locations in North America, India, and Abu
+                  Dhabi, we deliver world-class maritime services that encompass
+                  vessel management, safety advisory, technical surveys, and
+                  crew training.
                 </p>
               </div>
             </div>
@@ -181,17 +181,12 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                location: "Houston, Texas",
+                location: "North America",
                 flag: "🇺🇸",
-                specialty: "Gulf Coast Operations",
-              },
-              {
-                location: "Portland, Oregon",
-                flag: "🇺🇸",
-                specialty: "Pacific Northwest",
+                specialty: "Gulf Coast & Pacific Northwest Operations",
               },
               {
                 location: "India",
