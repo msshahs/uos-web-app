@@ -1,6 +1,6 @@
 import React from "react";
 import { Award } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 
 export default function Clients() {
@@ -73,6 +73,24 @@ export default function Clients() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+      {/* Call to Action Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-slate-900 text-white text-center">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10">
+          <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+            Want to Join Our Client Network?
+          </h2>
+          <p className="text-lg sm:text-xl text-blue-200 mb-8">
+            Let’s discuss how we can support your maritime goals with unmatched
+            expertise and global reach.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full transition duration-300 shadow"
+          >
+            Contact Us
+          </a>
         </div>
       </section>
     </div>

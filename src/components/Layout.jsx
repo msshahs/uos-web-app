@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+
 import { Anchor, Phone, Mail, MapPin, Waves, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -9,12 +9,12 @@ export default function Layout({ children, currentPageName }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { name: "Home", path: createPageUrl("") },
-    { name: "About", path: createPageUrl("About") },
-    { name: "Services", path: createPageUrl("Services") },
-    { name: "Clients", path: createPageUrl("Clients") },
-    // { name: "Gallery", path: createPageUrl("Gallery") },
-    { name: "Contact Us", path: createPageUrl("Contact") },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Clients", path: "/clients" },
+    // { name: "Gallery", path: "/gallery" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -64,30 +64,21 @@ export default function Layout({ children, currentPageName }) {
       <nav className="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <Link
-              to={createPageUrl("Home")}
-              className="flex items-center space-x-3"
-            >
+            <a href="/" className="flex items-center space-x-3">
               <div className="relative">
                 <img
                   src="/images/logo_.png"
                   style={{ width: "160px" }}
                   className="transparent"
-                ></img>
-                {/* <Anchor className="h-8 w-8 text-blue-600 wave-animation" /> */}
-                {/* <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div> */}
+                  alt="UOS NOLA Logo"
+                />
               </div>
-              {/* <div>
-                <h1 className="text-xl font-bold gradient-text">UOS NOLA</h1>
-                <p className="text-xs text-gray-600">United Ocean Shipping</p>
-              </div> */}
-            </Link>
+            </a>
 
             <div className="hidden md:flex items-center space-x-8">
               {navigationItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
+                <a
+                  href={item.path}
                   className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                     location.pathname === item.path
                       ? "bg-blue-100 text-blue-600 shadow-lg"
@@ -95,7 +86,7 @@ export default function Layout({ children, currentPageName }) {
                   }`}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
             </div>
 
@@ -134,8 +125,8 @@ export default function Layout({ children, currentPageName }) {
             className="fixed inset-0 z-[100] bg-white md:hidden"
           >
             <div className="flex justify-between items-center h-20 px-4 sm:px-6 border-b">
-              <Link
-                to={createPageUrl("")}
+              <a
+                href=""
                 className="flex items-center space-x-3"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -145,7 +136,7 @@ export default function Layout({ children, currentPageName }) {
                 <div>
                   <h1 className="text-xl font-bold gradient-text">UOS NOLA</h1>
                 </div>
-              </Link>
+              </a>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-2 rounded-lg text-gray-700 hover:bg-gray-100"
@@ -157,8 +148,8 @@ export default function Layout({ children, currentPageName }) {
               <ul className="space-y-4">
                 {navigationItems.map((item) => (
                   <li key={item.name}>
-                    <Link
-                      to={item.path}
+                    <a
+                      href={item.path}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`block w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 ${
                         location.pathname === item.path
@@ -167,7 +158,7 @@ export default function Layout({ children, currentPageName }) {
                       }`}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -209,12 +200,12 @@ export default function Layout({ children, currentPageName }) {
               <ul className="space-y-2">
                 {navigationItems.map((item) => (
                   <li key={item.name}>
-                    <Link
-                      to={item.path}
+                    <a
+                      href={item.path}
                       className="text-gray-300 hover:text-blue-300 transition-colors"
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

@@ -1,13 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { createPageUrl } from "@/utils";
 import {
   ArrowRight,
   Shield,
-  Waves,
   Anchor,
   FileText,
-  Globe,
   Users,
   Award,
 } from "lucide-react";
@@ -101,19 +97,19 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to={createPageUrl("Services")}>
+            <a href="/services">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-xl rounded-full">
                 Explore Our Services
               </Button>
-            </Link>
-            <Link to={createPageUrl("Contact")}>
+            </a>
+            <a href="/contact">
               <Button
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-xl rounded-full"
               >
                 Contact Us
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -191,12 +187,12 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link to={createPageUrl("Services")}>
+            <a href="/services">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full">
                 View All Services
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -213,20 +209,20 @@ export default function Home() {
               solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to={createPageUrl("Contact")}>
+              <a href="/contact">
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-xl rounded-full">
                   Contact Us
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-              </Link>
-              <Link to={createPageUrl("About")}>
+              </a>
+              <a href="/about">
                 <Button
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-xl rounded-full"
                 >
                   Learn More
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

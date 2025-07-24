@@ -59,11 +59,12 @@ export function SelectValue({ placeholder, value }) {
 
 export function SelectContent({ children }) {
   return (
-    <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow">
+    <div className="absolute top-full left-0 mt-1 z-50 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-80 overflow-auto">
       {children}
     </div>
   );
 }
+
 SelectContent.displayName = "SelectContent";
 
 export function SelectItem({ children, value, onSelect }) {

@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import PortMap from "../components/PortMap";
+import axios from "axios";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,6 +24,12 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Replace these with your actual values
+  const AIRTABLE_BASE_ID = "appyvXfI2zNLD5C1z";
+  const AIRTABLE_TABLE_NAME = "Responses";
+  const AIRTABLE_TOKEN =
+    "patQe0Ig9bBDV2hiy.b6c66858c631f33316a035a2c5e3c30acc9d7c90e2202c2dc8dfd050a9bc2ede"; // Use env variable in production
 
   useEffect(() => {
     const observerOptions = {
@@ -55,10 +62,31 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Thank you for your message! We will get back to you soon.");
+    try {
+      const response = await axios.post(
+        `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`,
+        {
+          records: [
+            {
+              fields: {
+                Name: formData.name,
+                Email: formData.email,
+                Company: formData.company,
+                Service: formData.service,
+                Message: formData.message,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      alert("Submitted successfully!");
       setFormData({
         name: "",
         email: "",
@@ -66,7 +94,12 @@ export default function Contact() {
         service: "",
         message: "",
       });
-    }, 2000);
+    } catch (err) {
+      console.error("Error submitting to Airtable:", err);
+      alert("Failed to submit form.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const offices = [
@@ -260,7 +293,7 @@ export default function Contact() {
                       />
                     </div>
 
-                    <div>
+                    <div className="relative">
                       <Label htmlFor="service">Service of Interest</Label>
                       <Select
                         value={formData.service}
@@ -348,7 +381,7 @@ export default function Contact() {
                       <p className="font-medium text-gray-900">
                         General Inquiries
                       </p>
-                      <p className="text-gray-600">info@uos-nola.com</p>
+                      <p className="text-gray-600">operations@uosnola.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

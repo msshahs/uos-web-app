@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Users,
-  Globe,
-  Award,
-  Anchor,
-  Ship,
-  Shield,
-  BadgeCheck,
-} from "lucide-react";
+import { Users, Globe, Anchor, Ship, Shield, BadgeCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 
@@ -227,6 +219,12 @@ export default function About() {
               while opening new possibilities for our clients' success in the
               maritime industry.
             </p>
+            <a
+              href="/contact"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full shadow-md transition-all duration-300"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </section>

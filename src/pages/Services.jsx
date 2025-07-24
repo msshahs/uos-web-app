@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Shield,
   Anchor,
@@ -17,8 +17,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { createPageUrl } from "@/utils";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import VesselSlider from "../components/VesselSlider";
 
@@ -336,11 +334,11 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-                  <Link to={createPageUrl("Contact")}>
+                  <a href="/contact">
                     <Button className="bg-blue-600 hover:bg-blue-700">
                       Contact Us
                     </Button>
-                  </Link>
+                  </a>
                 </div>
                 <div className="relative overflow-hidden rounded-r-lg">
                   <img
@@ -470,19 +468,19 @@ export default function Services() {
               requirements
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to={createPageUrl("Contact")}>
+              <a href="/contact">
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-xl rounded-full">
                   Contact Us
                 </Button>
-              </Link>
-              <Link to={createPageUrl("About")}>
+              </a>
+              <a href="/about">
                 <Button
                   variant="outline"
                   className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-xl rounded-full"
                 >
                   Learn More
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
